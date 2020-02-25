@@ -22,7 +22,7 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="org.zerock.test" />
-	
+	<context:component-scan base-package="org.zerock.controller" />
 	
 	
 </beans:beans>
