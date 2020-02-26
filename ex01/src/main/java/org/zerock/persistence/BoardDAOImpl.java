@@ -38,7 +38,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public List<BoardVO> listAll() throws Exception {
-		return session.selectOne(namespace + ".listAll");
+		return session.selectList(namespace + ".listAll");
 	}
 
 }
