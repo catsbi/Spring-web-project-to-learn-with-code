@@ -11,14 +11,16 @@ PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
 	</insert>
 
 	<select id="read" resultType="org.zerock.domain.BoardVO">
-		select bno, title, content, writer, regdate, viewcnt
+		select bno, title, content, writer,
+		regdate, viewcnt
 		from tbl_board
 		where bno = #{bno}
 	</select>
 
 	<update id="update">
 		update tbl_board
-		set title = #{title}, content = #{content}
+		set title = #{title}, content =
+		#{content}
 		where bno = #{bno}
 	</update>
 
@@ -28,12 +30,32 @@ PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
 	</delete>
 
 	<select id="listAll" resultType="org.zerock.domain.BoardVO">
-	<![CDATA[
-	select bno, title, content, writer, regdate, viewcnt
-	from tbl_board
-	where bno > 0
-	order by bno desc, regdate desc
-	]]>
+		<![CDATA[
+		select bno, title, content, writer, regdate, viewcnt
+		from tbl_board
+		where bno > 0
+		order by bno desc, regdate desc
+		]]>
+	</select>
+
+	<select id="listPage" resultType="BoardVO">
+		<![CDATA[
+		select bno, title, content, writer, regdate, viewcnt
+		from tbl_board
+		where bno>0
+		order by bno desc, regdate desc
+		limit #{page}, 10
+		]]>
+	</select>
+
+	<select id="listCriteria" resultType="BoardVO">
+		<![CDATA[
+		select bno, title, content, writer, regdate, viewcnt
+		from tbl_board
+		where bno > 0
+		order by bno desc, regdate desc
+		limit #{pageStart}, #{perPageNum}
+		]]>
 	</select>
 
 </mapper>

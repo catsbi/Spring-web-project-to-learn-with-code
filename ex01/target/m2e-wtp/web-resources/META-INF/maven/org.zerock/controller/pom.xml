@@ -118,6 +118,14 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- taglib error 수정용 -->
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+			<scope>compile</scope>
+		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -195,8 +203,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.5.1</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<compilerArgument>-Xlint:all</compilerArgument>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>
