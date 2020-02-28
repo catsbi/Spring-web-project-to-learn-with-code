@@ -20,6 +20,8 @@ public class CommonExceptionAdvice {
 	
 	@ExceptionHandler(Exception.class)
 	private ModelAndView errorModelAndView(Exception ex) {
+		logger.info(ex.toString());
+		
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("/error_common");
 		modelAndView.addObject("exception",  ex);
