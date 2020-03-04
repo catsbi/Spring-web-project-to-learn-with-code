@@ -12,6 +12,20 @@ PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
 		order by rno desc
 	</select>
 	
+	<select id="listPage" resultType="ReplyVO">
+		select *
+		from tbl_reply
+		where bno = #{bno}
+		order by rno desc
+		limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(bno)
+		from tbl_reply
+		where bno = #{bno}
+	</select>
+	
 	<insert id="create">
 		insert into tbl_reply (bno, replytext, replyer)
 		values (#{bno}, #{replytext}, #{replyer})
