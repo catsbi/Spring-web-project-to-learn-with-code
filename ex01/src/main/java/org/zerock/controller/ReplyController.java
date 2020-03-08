@@ -78,7 +78,11 @@ public class ReplyController {
 			map.put("pageMaker", pageMaker);
 			
 			entity = new ResponseEntity<Map<String,Object>>(map, HttpStatus.OK);
+			System.out.println("\ntry\n");
+			System.out.println(entity.toString());
+			System.out.println();
 		}catch(Exception e) {
+			System.out.println("\ncatch\n");
 			e.printStackTrace();
 			entity = new ResponseEntity<Map<String,Object>>(HttpStatus.BAD_REQUEST);
 		}
